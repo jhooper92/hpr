@@ -16,12 +16,15 @@
 <?php
 
 include('../conn.php');
+
+session_start();
 //Connecting to sql db.
 $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 
 	$date_stamp = date("d.m.y H:i:s");
 	$ccr_id = "$_POST[ccr_id]";
-	$prevURL = "$_POST[ccr_url]"; 
+	$prevURL = "$_POST[ccr_url]";
+	$_SESSION['prevURL'] = $prevURL;
 
 	$errors = array();
 
@@ -31,6 +34,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	}
 	else {
 		$nickname = trim($_POST['ccr_nickname']);
+		$nickname = preg_replace('/[^A-Za-z0-9\-]/', '', $nickname);
 		$nickname = htmlspecialchars($nickname);
 	}
 
@@ -39,8 +43,27 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 		$email = "";
 	}
 	else {
-		$email = trim($_POST['ccr_email']);
-		$email = htmlspecialchars($email);
+
+		if (!filter_var($_POST['ccr_email'], FILTER_VALIDATE_EMAIL)) {
+	  		$errors[] = "<div class='row error'>Invalid Email Address</div>";
+	  		$email = "$_POST[ccr_email]";
+		}
+
+		else {
+				// $checkEmail = $_POST['ccr_email']; 
+				// $checkExist = mysqli_query($conn, "SELECT * FROM review_hold WHERE email= '$checkEmail' AND ccr_id= '$ccr_id' AND modStatus='APP'");
+				// $num_rows = mysqli_num_rows($checkExist);
+				// if($num_rows == 0){
+	   //  			$email = trim($_POST['ccr_email']);
+				// 	$email = htmlspecialchars($email);
+				// }
+
+				// else{
+				//    header( 'Location: review_false.php' ) ;
+				// }
+
+				$email = "$_POST[ccr_email]";
+		}	
 	}
 
 	if (!isset($_POST['ccr_rating']))
@@ -49,6 +72,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	}
 	else {
 		$rating = trim($_POST['ccr_rating']);
+		$rating = preg_replace('/[^A-Za-z0-9\-]/', '', $rating);
 		$rating = htmlspecialchars($rating);
 	}
 
@@ -59,6 +83,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	else {
 		$ReviewTitle = trim($_POST['ccr_ReviewTitle']);
 		$ReviewTitle = htmlspecialchars($ReviewTitle);
+		$ReviewTitle = preg_replace('/[^A-Za-z0-9\-]/', '', $ReviewTitle);
 	}
 
 	if (empty($_POST['ccr_message']))
@@ -68,45 +93,63 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	else {
 		$message = trim($_POST['ccr_message']);
 		$message = htmlspecialchars($message);
+		$message = preg_replace('/[^A-Za-z0-9\-]/', '', $message);
 	}
 
 	if (!isset($_POST['ccr_recommend']))
-		{$errors[] = "<div class='row error'>Enter a recommend</div>";
+		{$errors[] = "<div class='row error'>Enter if you would recommend.</div>";
 		$recommend = "";
 	}
 	else {
 		$recommend = trim($_POST['ccr_recommend']);
 		$recommend = htmlspecialchars($recommend);
+		$recommend = preg_replace('/[^A-Za-z0-9\-]/', '', $recommend);
 	}
-
 
 	if (empty($errors))
 	{
+
+		$checkExist = mysqli_query($conn, "SELECT * FROM review_hold WHERE email= '$email' AND ccr_id= '$ccr_id' AND modStatus='APP'");
+		$num_rows = mysqli_num_rows($checkExist);
 
 		if (!$conn) {
 		    die("Connection failed: " . mysqli_connect_error());
 		}
 
-		$sql = "INSERT INTO review_hold (CCR_id, nickname, email, rating, ReviewTitle, message, reg_date, modStatus, recommend)
-		VALUES ( '$ccr_id', '$nickname' , '$email' , '$rating', '$ReviewTitle', '$message', '$date_stamp' , 'PEND', '$recommend')";
+		
+		if($num_rows == 0){
+			$email = trim($_POST['ccr_email']);
+			$email = htmlspecialchars($email);
+		
+			
 
-		if (mysqli_query($conn, $sql)) {
-		    echo "<div class='mainwrap'><div class='innerwrap'>
-		<h1> Thanks </h1>
-		<p> Your review has been submitted </p>
-			<a href='" . $prevURL . "'>Return to page</a></div></div>";
-		} else {
-		    echo "
-		    <div class='mainwrap'>
-		    	<div class='innerwrap'>
-					<h1> There seems to have been an issue</h1>
-					<p> Uh oh something has fucked up</p>
-				</div>
-			</div>";
+			$sql = "INSERT INTO review_hold (CCR_id, nickname, email, rating, ReviewTitle, message, reg_date, modStatus, recommend)
+			VALUES ( '$ccr_id', '$nickname' , '$email' , '$rating', '$ReviewTitle', '$message', '$date_stamp' , 'PEND', '$recommend')";
 
+			if (mysqli_query($conn, $sql)) {
+			    echo "<div class='mainwrap'><div class='innerwrap'>
+			<h1> Thanks </h1>
+			<p> Your review has been submitted </p>
+				<a href='" . $prevURL . "'>Return to page</a></div></div>";
+			} 
+
+			else {
+			    echo "
+			    <div class='mainwrap'>
+			    	<div class='innerwrap'>
+						<h1> There seems to have been an issue</h1>
+						<p> Uh oh something has fucked up</p>
+					</div>
+				</div>";
+			}
 		}
 
-		mysqli_close($conn);
+		
+
+		else{
+			   header( 'Location: review_false.php' );
+			}
+			mysqli_close($conn);
 	}
 
 	else {

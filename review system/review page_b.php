@@ -9,14 +9,13 @@ body {
 }
 
 .mainwrap {
-	width:50%;
 	margin:auto;
 
 }
 
 .innerwrap {
 	padding:2em;
-	width:100%;
+	width:90%;
 	display:block;
 	float:left;
 	margin-bottom:15px;

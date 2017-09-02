@@ -6,7 +6,6 @@ body {
 }
 
 .mainwrap {
-	width:50%;
 	margin:auto;
 
 }
@@ -15,7 +14,7 @@ body {
 	background-color:#fff;
 	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
 	padding:2em;
-	width:100%;
+	width:90%;
 	display:block;
 	float:left;
 	margin-bottom:15px;
