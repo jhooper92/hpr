@@ -8,7 +8,6 @@ body {
 }
 
 .mainwrap {
-	width:50%;
 	margin:auto;
 
 }
@@ -17,7 +16,7 @@ body {
 	background-color:#fff;
 	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
 	padding:2em;
-	width:100%;
+	width:90%;
 	display:block;
 	float:left;
 	margin-bottom:15px;
@@ -233,6 +232,14 @@ if (!$conn) {
 		$filterByPrint = "$_POST[filterBy]";
 		$searchFor = "$_POST[searchFor]";
 
+		$filterBy = trim($filterBy);
+		$filterBy = preg_replace('/[^A-Za-z0-9\-]/', '', $filterBy);
+		$filterBy = htmlspecialchars($filterBy);
+
+		$searchFor = trim($searchFor);
+		$searchFor = preg_replace('/[^A-Za-z0-9\-]/', '', $searchFor);
+		$searchFor = htmlspecialchars($searchFor);
+
 		setcookie("filter", $filterBy);
 		setcookie("search", $searchFor);
 
@@ -258,6 +265,10 @@ if (!$conn) {
 	elseif (isset($_POST['searchFor']) && !empty($_POST['searchFor'])) {
 		$searchFor = "$_POST[searchFor]";
 
+		$searchFor = trim($searchFor);
+		$searchFor = preg_replace('/[^A-Za-z0-9\-]/', '', $searchFor);
+		$searchFor = htmlspecialchars($searchFor);
+
 		setcookie("search", $searchFor);
 		setcookie("filter", "");
 
@@ -268,6 +279,10 @@ if (!$conn) {
 
 	elseif (isset($_POST['filterBy']) && !empty($_POST['filterBy']) ) {
 		$filterBy = "$_POST[filterBy]";
+
+		$filterBy = trim($filterBy);
+		$filterBy = preg_replace('/[^A-Za-z0-9\-]/', '', $filterBy);
+		$filterBy = htmlspecialchars($filterBy);
 
 		setcookie("filter", $filterBy);
 		setcookie("search", "");
