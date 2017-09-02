@@ -27,24 +27,27 @@ img {
   width: 100%;
   padding: 10px;
 }
-/* line 32, sass/main.scss */
-.review_inner .ccr_main_recommend {
-  font-size: 40px;
+/* line 34, sass/main.scss */
+.review_inner .ccr_main.ccr_left {
   font-weight: 900;
 }
-/* line 37, sass/main.scss */
+/* line 38, sass/main.scss */
+.review_inner .ccr_main .ccr_main_recommend {
+  font-size: 40px;
+}
+/* line 44, sass/main.scss */
 .review_inner .ccr_left {
   width: 25%;
   display: inline-block;
   float: left;
 }
-/* line 43, sass/main.scss */
+/* line 50, sass/main.scss */
 .review_inner .ccr_right {
   width: 75%;
   display: inline-block;
   float: left;
 }
-/* line 48, sass/main.scss */
+/* line 55, sass/main.scss */
 .review_inner .ccr_right img {
   max-width: 20px;
 }

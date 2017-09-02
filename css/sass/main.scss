@@ -29,10 +29,17 @@ img {
 		padding:10px;
  	}
 
-	.ccr_main_recommend {
-		font-size:40px;
+	.ccr_main {
+
+		&.ccr_left {
 		font-weight:$weight_black;
 	}
+
+	.ccr_main_recommend {
+		font-size:40px;
+	}
+
+}
 
 	.ccr_left {
 		width:25%;
