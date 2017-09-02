@@ -1,18 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
-<style>
-
-.row.error {
-    text-align: center;
-    padding: 10px;
-    background-color: lightcoral;
-    margin: 5px;
-    font-family: 'Baloo Bhaijaan', cursive;
-    color:#fff;
-}
-
-
-
-</style>
 <?php
 
 include('../conn.php');

@@ -1,94 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
-<style>
-
-body {
-	background-color:#f6f6f6;
-}
-
-.mainwrap {
-	margin:auto;
-
-}
-
-.innerwrap {
-	background-color:#fff;
-	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
-	padding:2em;
-	width:90%;
-	display:block;
-	float:left;
-	margin-bottom:15px;
-
-}
-
-.innerwrapright {
-	width:99%;
-	margin-left:1%;
-	display:block;
-	float:left;
-	padding:2em;
-	box-shadow: 0 4px 6px -2px rgba(0,0,0,.2);
-	background-color:#fff;
-}
-
-.boxleft {
-	width:49%;
-	background-color:#fff;
-	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
-	margin:15px 1% 0 0 ;
-	display:block;
-	float:left;
-}
-
-.boxright {
-	width:49%;
-	background-color:#fff;
-	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
-	margin:15px 0 0 1% ;
-	display:block;
-	float:left;
-}
-
-a {
-	text-decoration:none;
-	text-align:center;
-	color:#d1d1d1;
-}
-
-a:hover {
-	color:#000;
-}
-
-input, strong, option, textarea {
-	border:none;
-	font-family: 'Baloo Bhaijaan', cursive;
-	font-size:16px;
-	margin:10px;
-	padding:5px;
-	background: lightgrey;
-}
-
-input[type="text"], textarea {
-	width:90%;
-}
-
-h2 {
-	font-family: 'Baloo Bhaijaan', cursive;
-}
-
-span.ccr_required {
-	position:absolute;
-	color:red;
-}
-
-
-.form-row {
-	width:100%;
-	position:relative;
-}
-
-</style>
-
 <?php 
 
 	$ccr_id = "$_POST[ccr_id]"; 
@@ -99,7 +8,7 @@ span.ccr_required {
 <div class="mainwrap">
 	<div class="innerwrap">
 		<h2>Leave a Review</h2>
-			<form action="formvalidation.php" method="post">
+			<form action="form_valid" method="post">
 				<p class="ccr_req">Required fields are marked with *</p>
 				<div class="form-row nickname">
 					<input type="text" name="ccr_nickname" placeholder="Enter a Nickname" value="<?php if (!isset($_POST['ccr_nickname'])) {echo "";} else {echo $nickname;} ?>"><span class="ccr_">*</span>

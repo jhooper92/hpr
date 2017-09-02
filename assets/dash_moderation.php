@@ -1,5 +1,5 @@
 <?php
-include('../conn.php');
+include('../../conn.php');
 //Connecting to sql db.
 $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 
@@ -19,7 +19,7 @@ if (mysqli_query($conn, $sql)) {
 } 
 
 else {
-	header( 'Location: results.php' ) ;
+	header( 'Location: ../backend.php' ) ;
 
 }
 
