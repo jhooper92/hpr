@@ -35,17 +35,6 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 		}
 
 		else {
-				// $checkEmail = $_POST['ccr_email']; 
-				// $checkExist = mysqli_query($conn, "SELECT * FROM review_hold WHERE email= '$checkEmail' AND ccr_id= '$ccr_id' AND modStatus='APP'");
-				// $num_rows = mysqli_num_rows($checkExist);
-				// if($num_rows == 0){
-	   //  			$email = trim($_POST['ccr_email']);
-				// 	$email = htmlspecialchars($email);
-				// }
-
-				// else{
-				//    header( 'Location: review_false.php' ) ;
-				// }
 
 				$email = "$_POST[ccr_email]";
 		}	
@@ -132,7 +121,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 		
 
 		else{
-			   header( 'Location: review_false.php' );
+			   header( 'Location: ../review_false' );
 			}
 			mysqli_close($conn);
 	}

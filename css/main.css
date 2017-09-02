@@ -1,4 +1,50 @@
-/* line 1, sass/main.scss */
+/* line 5, sass/main.scss */
 body {
   background: lightgrey;
+}
+
+/* line 9, sass/main.scss */
+img {
+  max-width: 20px;
+}
+
+/* line 13, sass/main.scss */
+.review_inner {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+/* line 19, sass/main.scss */
+.review_inner p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+/* line 24, sass/main.scss */
+.review_inner .ccr_main_row, .review_inner .ccr_review_row {
+  background: #fff;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+/* line 32, sass/main.scss */
+.review_inner .ccr_main_recommend {
+  font-size: 40px;
+  font-weight: 900;
+}
+/* line 37, sass/main.scss */
+.review_inner .ccr_left {
+  width: 25%;
+  display: inline-block;
+  float: left;
+}
+/* line 43, sass/main.scss */
+.review_inner .ccr_right {
+  width: 75%;
+  display: inline-block;
+  float: left;
+}
+/* line 48, sass/main.scss */
+.review_inner .ccr_right img {
+  max-width: 20px;
 }

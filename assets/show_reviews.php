@@ -38,12 +38,12 @@ if (!$conn) {
 	else {
 
 		$recommendPercent = ($ryr / ($ryr + $rnr)) *100;
-		echo "<div class='main_row' itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating'><div class='left'><p class='recommend'>" . round($recommendPercent) . "&percnt;</p><p>Would Recommend</p></div>";
-		echo "<div class='right'><div class='stars' alt='" . $Rating . " out of 5 Stars' title ='" . $Rating . " out of 5 Stars'>";
+		echo "<div class='ccr_main_row' itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating'><div class='ccr_left ccr_main'><p class='ccr_main_recommend'>" . round($recommendPercent) . "&percnt;</p><p>Would Recommend</p></div>";
+		echo "<div class='ccr_right ccr_main'><div class='ccr_main_stars' alt='" . $Rating . " out of 5 Stars' title ='" . $Rating . " out of 5 Stars'>";
 		echo str_repeat("<img src='stars/five-stars.png'>", $rating_star);
 		echo "<img src='stars/stars_" . $rating_point . "'>";
 		echo str_repeat("<img src='stars/stars_0.png'>", $rating_grey);
-		echo "</div><div class='rating' itemprop='reviewCount'>(" . round($ryr + $rnr) .")</div> <p class='overallRating' > Overall Rating of <span itemprop='ratingValue'>" . $Rating ."</span> out of 5</p></div></div>";
+		echo "</div><div class='ccr_main_rating' itemprop='reviewCount'>(" . round($ryr + $rnr) .")</div> <p class='ccr_overallRating' > Overall Rating of <span itemprop='ratingValue'>" . $Rating ."</span> out of 5</p></div></div>";
 
 	} ?>
 
@@ -56,13 +56,13 @@ if (!$conn) {
 <?php
     while($row = mysqli_fetch_array($result)) {
 
-			echo "<div class='review_row' itemprop='review' itemscope itemtype='http://schema.org/Review'><div class='left review'><p><span itemprop='name'>" . $row['nickname'] . "</span> | <span itemprop='datePublished'>" . explode(" ", $row['reg_date'])[0] . "</p>" ;
+			echo "<div class='ccr_review_row' itemprop='review' itemscope itemtype='http://schema.org/Review'><div class='ccr_left ccr_review'><p><span itemprop='name'>" . $row['nickname'] . "</span> | <span itemprop='datePublished'>" . explode(" ", $row['reg_date'])[0] . "</p>" ;
 
-			echo "<p>" . str_repeat("<img src='stars/five-stars.png'>", $row['rating']) . "</p><p itemprop='reviewRating' itemscope itemtype='http://schema.org/Rating'> Rated this product: <span itemprop='ratingValue'>" . $row['rating'] . "</span><meta itemprop='worstRating' content = '1'><meta itemprop='bestRating' content = '5'></p> <div class='recommend'> <p> Would you recommend:" . $row['recommend'] . "</p></div></div>" ;
+			echo "<p>" . str_repeat("<img src='stars/five-stars.png'>", $row['rating']) . "</p><p itemprop='reviewRating' itemscope itemtype='http://schema.org/Rating'> Rated this product: <span itemprop='ratingValue'>" . $row['rating'] . "</span><meta itemprop='worstRating' content = '1'><meta itemprop='bestRating' content = '5'></p> <div class='ccr_recommend'> <p> Would you recommend:" . $row['recommend'] . "</p></div></div>" ;
 
-			echo "<div class='right review'><p class='review_title' itemprop='name'>" . $row['ReviewTitle'] . "</p>" ;
+			echo "<div class='ccr_right ccr_review'><p class='ccr_review_title' itemprop='name'>" . $row['ReviewTitle'] . "</p>" ;
 
-			echo "<div class='description' itemprop='description'> <p>" . $row['message'] . "</p></div>";
+			echo "<div class='ccr_description' itemprop='description'> <p>" . $row['message'] . "</p></div>";
 
 			echo "</div></div>";
 

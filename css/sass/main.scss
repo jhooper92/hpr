@@ -1,3 +1,53 @@
+$main_font:'Roboto', sans-serif;
+$weight_black: 900;
+
+
 body {
 	background:lightgrey;
 }
+
+img {
+	max-width:20px;
+}
+
+.review_inner {
+
+	width:50%;
+	display:block;
+	margin:auto;
+
+	p {
+		margin:0;
+		font-family:$main_font;
+	}
+
+ 	.ccr_main_row, .ccr_review_row {
+ 		background:#fff;
+		display:block;
+		float:left;
+		width:100%;
+		padding:10px;
+ 	}
+
+	.ccr_main_recommend {
+		font-size:40px;
+		font-weight:$weight_black;
+	}
+
+	.ccr_left {
+		width:25%;
+		display:inline-block;
+		float:left;
+	}
+
+	.ccr_right {
+		width:75%;
+		display:inline-block;
+		float:left;
+
+		img {
+			max-width:20px;
+		}
+	}
+
+ }
