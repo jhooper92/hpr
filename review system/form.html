@@ -1,0 +1,99 @@
+<link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
+<style>
+
+body {
+	background-color:#f6f6f6;
+}
+
+.mainwrap {
+	width:50%;
+	margin:auto;
+
+}
+
+.innerwrap {
+	background-color:#fff;
+	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
+	padding:2em;
+	width:100%;
+	display:block;
+	float:left;
+	margin-bottom:15px;
+
+}
+
+.innerwrapright {
+	width:99%;
+	margin-left:1%;
+	display:block;
+	float:left;
+	padding:2em;
+	box-shadow: 0 4px 6px -2px rgba(0,0,0,.2);
+	background-color:#fff;
+}
+
+.boxleft {
+	width:49%;
+	background-color:#fff;
+	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
+	margin:15px 1% 0 0 ;
+	display:block;
+	float:left;
+}
+
+.boxright {
+	width:49%;
+	background-color:#fff;
+	box-shadow:0 4px 6px -2px rgba(0,0,0,.2);
+	margin:15px 0 0 1% ;
+	display:block;
+	float:left;
+}
+
+a {
+	text-decoration:none;
+	text-align:center;
+	color:#d1d1d1;
+}
+
+a:hover {
+	color:#000;
+}
+
+input, strong, option {
+	border:none;
+	font-family: 'Contrail One', cursive;
+	font-size:16px;
+	margin:5px;
+	padding:5px;
+	border-bottom:1px solid lightgrey;
+}
+
+h2 {
+	font-family: 'Contrail One', cursive;
+}
+
+
+
+
+
+</style>
+
+<div class="mainwrap">
+	<div class="innerwrap">
+		<h2>Leave a Review</h2>
+			<form action="sendreview.php" method="post">
+					<input type="text" name="nickname" placeholder="Nickname" required></br>
+					<input type="text" name="email" placeholder="Email Address" required></br>
+					<input type="radio" name="rating" value="1" checked> 1 Star<br>
+					<input type="radio" name="rating" value="2" checked> 2 Star<br>
+					<input type="radio" name="rating" value="3" checked> 3 Star<br>
+					<input type="radio" name="rating" value="4" checked> 4 Star<br>
+					<input type="radio" name="rating" value="5" checked> 5 Star<br>
+				    <input type="text" name="ReviewTitle" placeholder="Review Title" required></br>
+				    <textarea name="message" rows="10" cols="30" placeholder="leave more detail about your experience"></textarea></form></br>
+				    <input type="submit" value="submit">
+			</form>
+	</div>
+</div>
+
