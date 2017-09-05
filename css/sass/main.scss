@@ -1,9 +1,9 @@
 $main_font:'Roboto', sans-serif;
 $weight_black: 900;
-
+$bg_dark: #1b1b1b;
 
 body {
-	background:lightgrey;
+	background:rgba(211, 211, 211, 0.23);
 }
 
 img {
@@ -16,17 +16,35 @@ img {
 	display:block;
 	margin:auto;
 
+	form.ccr_write {
+		display: block;
+		float: left;
+		margin: 10px 0;
+
+		input.write_btn {
+			padding:12px;
+			font-family:$main_font;
+			background-color: #024a6d;
+			box-sizing: unset;
+			border: none;
+			font-weight: bold;
+			font-size: 15px;
+			color:#fff;
+		}
+	}
+
 	p {
 		margin:0;
 		font-family:$main_font;
+		color:#fff;
 	}
 
  	.ccr_main_row, .ccr_review_row {
- 		background:#fff;
+ 		background:$bg_dark;
 		display:block;
 		float:left;
 		width:100%;
-		padding:10px;
+		padding:30px;
  	}
 
 	.ccr_main {
@@ -36,24 +54,52 @@ img {
 	}
 
 	.ccr_main_recommend {
-		font-size:40px;
+		font-size:56px;
 	}
 
 }
 
 	.ccr_left {
-		width:25%;
+		width:20%;
 		display:inline-block;
 		float:left;
+		border-right:2px dashed #fff;
 	}
 
 	.ccr_right {
-		width:75%;
 		display:inline-block;
 		float:left;
+		padding:4px 0 0 40px;
+
+		.ccr_main_stars {
+			display:inline-block;
+			float:left;
+		}
+
+		.ccr_main_rating {
+			display:block;
+			float:left;
+			font-family:$main_font;
+			font-weight:$weight_black;
+			font-size:30px;
+			color:#fff;
+			margin-top:7px;
+			margin-left:10px;
+		}
+
+		.ccr_overallRating {
+			margin-top:8px;
+			font-size:20px;
+		}
+
+		.ccr_overallRating {
+			display:inline-block;
+			float:left;
+			clear:left;
+		}
 
 		img {
-			max-width:20px;
+			max-width:50px;
 		}
 	}
 

@@ -2,8 +2,8 @@
 include('../conn.php');
 //Connecting to sql db.
 $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
-$limit = 5;  
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+$limit = 5;
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * $limit;
 
 
@@ -13,7 +13,7 @@ if (!$conn) {
 
 
     $result = mysqli_query($conn,"SELECT * FROM $tableName where CCR_id= '$CCR_id' AND modStatus= 'APP' ORDER BY  reg_date DESC LIMIT $start_from, $limit" );
-    
+
     $result_b = mysqli_query($conn, "SELECT AVG(rating) AS rating FROM $tableName where CCR_id = '$CCR_id' AND modStatus = 'APP'");
     $row = mysqli_fetch_array($result_b);
 	$sum = $row['rating'];
@@ -47,7 +47,7 @@ if (!$conn) {
 
 	} ?>
 
-	<form action='form' method='post'>
+	<form action='form' method='post' class='ccr_write'>
 		<input type="hidden" name="ccr_id" value="<?php echo $CCR_id?>">
 		<input type="hidden" name="ccr_url" value="<?php echo $pageName ?>">
 		<input type="submit" class="write_btn" value="Write a Review">
@@ -66,18 +66,18 @@ if (!$conn) {
 
 			echo "</div></div>";
 
-      } 
+      }
 
-      	$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE CCR_id= '$CCR_id' AND modStatus= 'APP'"; 
-		$rs_result = mysqli_query($conn,$countsql);  
-		$pagerow = mysqli_fetch_row($rs_result);  
-		$total_records = $pagerow[0];  
-		$total_pages = ceil($total_records / $limit);  
-		$pagLink = "<div class='pagination'>";  
-		for ($i=1; $i<=$total_pages; $i++) {  
-		             $pagLink .= "<a class='pageBtn' href='" . $pageName . "?page=".$i."'>".$i."</a>";  
-		};  
-		
+      	$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE CCR_id= '$CCR_id' AND modStatus= 'APP'";
+		$rs_result = mysqli_query($conn,$countsql);
+		$pagerow = mysqli_fetch_row($rs_result);
+		$total_records = $pagerow[0];
+		$total_pages = ceil($total_records / $limit);
+		$pagLink = "<div class='pagination'>";
+		for ($i=1; $i<=$total_pages; $i++) {
+		             $pagLink .= "<a class='pageBtn' href='" . $pageName . "?page=".$i."'>".$i."</a>";
+		};
+
 		if ($total_records > $limit){
 		echo $pagLink . "</div>";
 		}
