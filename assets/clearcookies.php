@@ -3,7 +3,7 @@
 setcookie("search", "");
 setcookie("filter", "");
 
-header( 'Location: assets/results' ) ;
+header( 'Location:../backend' ) ;
 
 
 ?>

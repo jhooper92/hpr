@@ -51,6 +51,7 @@ img {
 
 		&.ccr_left {
 		font-weight:$weight_black;
+		text-align:center;
 	}
 
 	.ccr_main_recommend {
@@ -101,6 +102,20 @@ img {
 		img {
 			max-width:50px;
 		}
+	}
+
+	.ccr_review_row {
+		margin-bottom:15px;
+
+		.ccr_left {
+			width:25%;
+
+			&.ccr_review p {
+				text-align: center;
+    		margin: 5px;
+			}
+		}
+
 	}
 
  }

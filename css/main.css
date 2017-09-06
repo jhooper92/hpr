@@ -48,30 +48,31 @@ img {
 /* line 52, sass/main.scss */
 .review_inner .ccr_main.ccr_left {
   font-weight: 900;
+  text-align: center;
 }
-/* line 56, sass/main.scss */
+/* line 57, sass/main.scss */
 .review_inner .ccr_main .ccr_main_recommend {
   font-size: 56px;
 }
-/* line 62, sass/main.scss */
+/* line 63, sass/main.scss */
 .review_inner .ccr_left {
   width: 20%;
   display: inline-block;
   float: left;
   border-right: 2px dashed #fff;
 }
-/* line 69, sass/main.scss */
+/* line 70, sass/main.scss */
 .review_inner .ccr_right {
   display: inline-block;
   float: left;
   padding: 4px 0 0 40px;
 }
-/* line 74, sass/main.scss */
+/* line 75, sass/main.scss */
 .review_inner .ccr_right .ccr_main_stars {
   display: inline-block;
   float: left;
 }
-/* line 79, sass/main.scss */
+/* line 80, sass/main.scss */
 .review_inner .ccr_right .ccr_main_rating {
   display: block;
   float: left;
@@ -82,18 +83,31 @@ img {
   margin-top: 7px;
   margin-left: 10px;
 }
-/* line 90, sass/main.scss */
+/* line 91, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   margin-top: 8px;
   font-size: 20px;
 }
-/* line 95, sass/main.scss */
+/* line 96, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   display: inline-block;
   float: left;
   clear: left;
 }
-/* line 101, sass/main.scss */
+/* line 102, sass/main.scss */
 .review_inner .ccr_right img {
   max-width: 50px;
+}
+/* line 107, sass/main.scss */
+.review_inner .ccr_review_row {
+  margin-bottom: 15px;
+}
+/* line 110, sass/main.scss */
+.review_inner .ccr_review_row .ccr_left {
+  width: 25%;
+}
+/* line 113, sass/main.scss */
+.review_inner .ccr_review_row .ccr_left.ccr_review p {
+  text-align: center;
+  margin: 5px;
 }

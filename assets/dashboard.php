@@ -3,12 +3,10 @@
 include('../conn.php');
 //Connecting to sql db.
 $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
+$pageName = $_SERVER['PHP_SELF'];
 
-
-
-
-$limit = 5;  
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+$limit = 5;
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * $limit;
 
 if (!$conn) {
@@ -30,7 +28,7 @@ if (!$conn) {
 		setcookie("filter", $filterBy);
 		setcookie("search", $searchFor);
 
-		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE modStatus= '$filterBy' AND CCR_id= '$searchFor'";  
+		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE modStatus= '$filterBy' AND CCR_id= '$searchFor'";
 
 		$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE modStatus= '$filterBy' AND CCR_id= '$searchFor' ORDER BY reg_date DESC LIMIT $start_from, $limit");
 
@@ -60,7 +58,7 @@ if (!$conn) {
 		setcookie("filter", "");
 
 		$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE CCR_id= '$searchFor' ORDER BY reg_date DESC LIMIT $start_from, $limit");
-		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE CCR_id= '$searchFor'"; 
+		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE CCR_id= '$searchFor'";
 		$filteredComment = "<p class='currentfilter'> Filtered By: " . $searchFor . "</p>";
 	}
 
@@ -75,8 +73,8 @@ if (!$conn) {
 		setcookie("search", "");
 
 		$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE modStatus= '$filterBy' ORDER BY reg_date DESC LIMIT $start_from, $limit");
-		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE modStatus= '$filterBy'"; 
-				
+		$countsql = "SELECT COUNT(unique_id) FROM $tableName WHERE modStatus= '$filterBy'";
+
 				switch ($filterBy) {
 				    case "APP":
 				        $filterResult = " Approved Reviews";
@@ -103,7 +101,7 @@ if (!$conn) {
 			$cookieSearch = $_COOKIE['search'];
 			$cookieFilter = $_COOKIE['filter'];
 			$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE modStatus= '$cookieFilter' AND CCR_id= '$cookieSearch' ORDER BY reg_date DESC LIMIT $start_from, $limit");
-			
+
 			switch ($cookieFilter) {
 				    case "APP":
 				        $filterResult = " Approved Reviews";
@@ -141,8 +139,8 @@ if (!$conn) {
 				}
 			$filteredComment = "<p class='currentfilter'> Filtered By: " . $filterResult . "</p>";
 		}
-		
-		$countsql = "SELECT COUNT(unique_id) FROM $tableName"; 
+
+		$countsql = "SELECT COUNT(unique_id) FROM $tableName";
 	}
 
 ?>
@@ -152,7 +150,7 @@ if (!$conn) {
 			<option value="">All Reviews</option>
 			<option value="REJ">Rejected Reviews</option>
 			<option value="APP">Approved Reviews</option>
-			<option value="PEND">Pending Reviews</option>  
+			<option value="PEND">Pending Reviews</option>
 		</select>
 		<input type="text" class="filterby" name="searchFor" placeholder="Search for product">
 		<input type="submit" class="filterby" value="Filter">
@@ -160,7 +158,7 @@ if (!$conn) {
 	<?php
 		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) || isset($_COOKIE['search'])) {
 			echo "<div class='row filterResults'>" . $filteredComment;
-			echo "<a class='clearFilter' href='clearcookies.php'>X</a></div>";
+			echo "<a class='clearFilter' href='/hpr/assets/clearcookies.php'>X</a></div>";
 		}
 
 	?>
@@ -186,35 +184,35 @@ if (!$conn) {
 
     	echo "<div class='row'><p>Review ID:<span> " . $row['unique_id'] . "</span> | Product Code:<span> " . $row['CCR_id'] . "</span></p><p> Rating:<span> " . $row['rating'] . "</span></p><p>Nickname:<span> " . $row['nickname'] . "</span></p><p> Submission Date:<span>" . $row['reg_date'] . "</p><p> Current Status:<span> " . $modStatus . "</span></p>" ;
 
-    			echo "<div class='description'><p>" . $row['ReviewTitle'] . "<p>" . $row['message'] . "</p></div>"; 
+    			echo "<div class='description'><p>" . $row['ReviewTitle'] . "<p>" . $row['message'] . "</p></div>";
 
-    	if ($row['modStatus'] === "PEND") 
-    		{ 
+    	if ($row['modStatus'] === "PEND")
+    		{
     			echo $mod_App . $mod_Rej . "</div>";
     		}
 
-		if ($row['modStatus'] == "APP") 
-		{ 
+		if ($row['modStatus'] == "APP")
+		{
 			echo $mod_Rej . "</div>";
 
 		}
 
-		if ($row['modStatus'] == "REJ") 
-		{ 
+		if ($row['modStatus'] == "REJ")
+		{
 			echo $mod_App . "</div>";
 		}
 
-      } 
-      	
-		$rs_result = mysqli_query($conn,$countsql);  
-		$pagerow = mysqli_fetch_row($rs_result);  
-		$total_records = $pagerow[0];  
-		$total_pages = ceil($total_records / $limit);  
-		$pagLink = "<div class='pagination'>";  
-		for ($i=1; $i<=$total_pages; $i++) {  
-		             $pagLink .= "<a class='pageBtn' href='" . $pageName . "?page=".$i."'>".$i."</a>";  
-		};  
-		
+      }
+
+		$rs_result = mysqli_query($conn,$countsql);
+		$pagerow = mysqli_fetch_row($rs_result);
+		$total_records = $pagerow[0];
+		$total_pages = ceil($total_records / $limit);
+		$pagLink = "<div class='pagination'>";
+		for ($i=1; $i<=$total_pages; $i++) {
+		             $pagLink .= "<a class='pageBtn' href='" . $pageName . "?page=".$i."'>".$i."</a>";
+		};
+
 		if ($total_records > $limit){
 		echo $pagLink . "</div>";
 		}
