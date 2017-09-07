@@ -37,7 +37,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 		else {
 
 				$email = "$_POST[ccr_email]";
-		}	
+		}
 	}
 
 	if (!isset($_POST['ccr_rating']))
@@ -57,7 +57,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	else {
 		$ReviewTitle = trim($_POST['ccr_ReviewTitle']);
 		$ReviewTitle = htmlspecialchars($ReviewTitle);
-		$ReviewTitle = preg_replace('/[^A-Za-z0-9\-]/', '', $ReviewTitle);
+		// $ReviewTitle = preg_replace('/[^A-Za-z0-9\-]/', '', $ReviewTitle);
 	}
 
 	if (empty($_POST['ccr_message']))
@@ -67,7 +67,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	else {
 		$message = trim($_POST['ccr_message']);
 		$message = htmlspecialchars($message);
-		$message = preg_replace('/[^A-Za-z0-9\-]/', '', $message);
+		// $message = preg_replace('/[^A-Za-z0-9\-]/', '', $message);
 	}
 
 	if (!isset($_POST['ccr_recommend']))
@@ -90,12 +90,12 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 		    die("Connection failed: " . mysqli_connect_error());
 		}
 
-		
+
 		if($num_rows == 0){
 			$email = trim($_POST['ccr_email']);
 			$email = htmlspecialchars($email);
-		
-			
+
+
 
 			$sql = "INSERT INTO review_hold (CCR_id, nickname, email, rating, ReviewTitle, message, reg_date, modStatus, recommend)
 			VALUES ( '$ccr_id', '$nickname' , '$email' , '$rating', '$ReviewTitle', '$message', '$date_stamp' , 'PEND', '$recommend')";
@@ -105,7 +105,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 			<h1> Thanks </h1>
 			<p> Your review has been submitted </p>
 				<a href='" . $prevURL . "'>Return to page</a></div></div>";
-			} 
+			}
 
 			else {
 			    echo "
@@ -118,7 +118,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 			}
 		}
 
-		
+
 
 		else{
 			   header( 'Location: ../review_false' );

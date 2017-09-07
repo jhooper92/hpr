@@ -1,5 +1,7 @@
 $main_font:'Roboto', sans-serif;
 $weight_black: 900;
+$l_green:#599226;
+$d_green: #426d1b;
 $fnt_sml: 16px;
 $fnt_md: 20px;
 $fnt_lg: 24px;
@@ -12,15 +14,32 @@ img {
 	max-width:20px;
 }
 
-.review_inner {
+.review_wrp {
+	display: block;
+    float: left;
+    margin-bottom: 10px;
+		width:100%;
+}
 
+.review_inner {
 	width:50%;
 	display:block;
 	margin:auto;
 
 	.pagination {
-		display:inline-block;
+		display:block;
 		float:right;
+		font-family:$main_font;
+
+
+		a.pageBtn {
+			padding:10px;
+			background:$l_green;
+			margin-left:10px;
+			text-decoration:none;
+			color:#fff;
+			display:inline-block;
+		}
 	}
 
 	form.ccr_write {
@@ -31,12 +50,18 @@ img {
 		input.write_btn {
 			padding:12px;
 			font-family:$main_font;
-			background-color: #30a4c7;
+			background: $l_green;
 			box-sizing: unset;
 			border: none;
 			font-weight: bold;
 			font-size: $fnt_sml;
-			color:#000;
+			color:#fff;
+
+			&:hover {
+				background:$d_green;
+				transition:ease-in .5s;
+				-webkit-transition:ease-in .5s;
+			}
 		}
 	}
 
@@ -74,13 +99,15 @@ img {
 		width:20%;
 		display:inline-block;
 		float:left;
-		border-right:2px dashed #000;
 	}
 
 	.ccr_right {
 		display:inline-block;
 		float:left;
 		padding:4px 0 0 40px;
+		border-left:2px dashed #000;
+		min-height:101px;
+		width:60%;
 
 		.ccr_main_stars {
 			display:inline-block;
@@ -128,6 +155,7 @@ img {
 
 		.ccr_review_title {
 			font-size:$fnt_md;
+			margin-bottom:10px;
 		}
 	}
 
