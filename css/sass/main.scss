@@ -1,6 +1,8 @@
 $main_font:'Roboto', sans-serif;
 $weight_black: 900;
-$bg_dark: #1b1b1b;
+$fnt_sml: 16px;
+$fnt_md: 20px;
+$fnt_lg: 24px;
 
 body {
 	background:rgba(211, 211, 211, 0.23);
@@ -16,6 +18,11 @@ img {
 	display:block;
 	margin:auto;
 
+	.pagination {
+		display:inline-block;
+		float:right;
+	}
+
 	form.ccr_write {
 		display: block;
 		float: left;
@@ -24,27 +31,30 @@ img {
 		input.write_btn {
 			padding:12px;
 			font-family:$main_font;
-			background-color: #024a6d;
+			background-color: #30a4c7;
 			box-sizing: unset;
 			border: none;
 			font-weight: bold;
-			font-size: 15px;
-			color:#fff;
+			font-size: $fnt_sml;
+			color:#000;
 		}
 	}
 
 	p {
 		margin:0;
 		font-family:$main_font;
-		color:#fff;
+		color:#000;
+		font-size:$fnt_sml;
+		font-weight:$weight_black;
 	}
 
  	.ccr_main_row, .ccr_review_row {
- 		background:$bg_dark;
+ 		background:#fff;
 		display:block;
 		float:left;
 		width:100%;
 		padding:30px;
+		border:1px solid #969696;
  	}
 
 	.ccr_main {
@@ -64,7 +74,7 @@ img {
 		width:20%;
 		display:inline-block;
 		float:left;
-		border-right:2px dashed #fff;
+		border-right:2px dashed #000;
 	}
 
 	.ccr_right {
@@ -83,7 +93,7 @@ img {
 			font-family:$main_font;
 			font-weight:$weight_black;
 			font-size:30px;
-			color:#fff;
+			color:#000;
 			margin-top:7px;
 			margin-left:10px;
 		}
@@ -116,6 +126,13 @@ img {
 			}
 		}
 
+		.ccr_review_title {
+			font-size:$fnt_md;
+		}
+	}
+
+	.ccr_description p {
+		font-weight:initial;
 	}
 
  }
