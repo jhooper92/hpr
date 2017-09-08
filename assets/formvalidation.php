@@ -104,7 +104,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 			    echo "<div class='mainwrap'><div class='innerwrap'>
 			<h1> Thanks </h1>
 			<p> Your review has been submitted </p>
-				<a href='" . $prevURL . "'>Return to page</a></div></div>";
+				<a href='" . $prevURL . "' class='ccr_finish'>Finish</a></div></div>";
 			}
 
 			else {
@@ -112,7 +112,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 			    <div class='mainwrap'>
 			    	<div class='innerwrap'>
 						<h1> There seems to have been an issue</h1>
-						<p> Uh oh something has fucked up</p>
+						<p> Please contact the company</p>
 					</div>
 				</div>";
 			}
@@ -121,7 +121,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 
 
 		else{
-			   header( 'Location: ../review_false' );
+			   header( 'Location: review_false' );
 			}
 			mysqli_close($conn);
 	}
@@ -129,7 +129,7 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 	else {
 
 			foreach ($errors as $msg)
-		{echo "$msg";}
-		include('form.php');
+				{echo "$msg";}
+		include('assets/form.php');
 	}
 ?>

@@ -28,6 +28,12 @@ img {
 	margin:auto;
 	max-width:1240px;
 
+	a.btn {
+		display: inline-block;
+		margin: 10px;
+		text-decoration: none;
+	}
+
 	// @media #{$md_bp} {
 	// 	width:100%;
 	// }
@@ -48,7 +54,7 @@ img {
 		}
 	}
 
-	input[type="submit"] {
+	input[type="submit"], a.btn {
 		padding:12px;
 		font-family:$main_font;
 		background: $l_green;
@@ -79,7 +85,7 @@ img {
 		font-weight:$weight_black;
 	}
 
- 	.ccr_main_row, .ccr_review_row, form.ccr_write_review {
+ 	.ccr_main_row, .ccr_review_row, .review_false {
  		background:#fff;
 		display:block;
 		float:left;
@@ -171,6 +177,18 @@ img {
 	}
 
 	//Styling for the form
+
+	.row.error {
+		padding:10px 0;
+		margin:10px auto;
+		width:100%;
+		max-width:1240px;
+		background:lightcoral;
+		text-align:center;
+		font-family:$main_font;
+		color:#fff;
+	}
+
 	.ccr_write_review {
 
 		.ccr_req, p.ccr_req, span.ccr_req {
@@ -202,4 +220,9 @@ img {
 			}
 		}
 
+		.review_false {
+			h1,p {
+				margin-left:10px;
+			}
+		}
  }
