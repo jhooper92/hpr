@@ -99,12 +99,10 @@ if (isset($_POST['clear'])) {
 		$filteredComment = "<p class='currentfilter'> Filtered By: " . $filterResult . "</p>";
 	}
 
-
-
 	else {
 
 		$result = mysqli_query($conn,"SELECT * FROM $tableName ORDER BY reg_date DESC LIMIT $start_from, $limit");
-		$filteredComment = " ";
+		$filteredComment = "";
 
 		if(isset($_COOKIE['search']) && isset($_COOKIE['filter']) ) {
 			$cookieSearch = $_COOKIE['search'];
@@ -126,13 +124,13 @@ if (isset($_POST['clear'])) {
 			$filteredComment = "<p class='currentfilter'> Filtered By: " . $filterResult . " &amp; " . $cookieSearch . "</p>";
 		}
 
-		if(isset($_COOKIE['search']) && !isset($_COOKIE['filter']) ) {
+		elseif(isset($_COOKIE['search']) && !isset($_COOKIE['filter']) ) {
 			$cookieSearch = $_COOKIE['search'];
 			$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE CCR_id= '$cookieSearch' ORDER BY reg_date DESC LIMIT $start_from, $limit");
 			$filteredComment = "<p class='currentfilter'> Filtered By: " . $cookieSearch .  "</p>";
 		}
 
-		if(isset($_COOKIE['filter']) && !isset($_COOKIE['search']) ) {
+		elseif(isset($_COOKIE['filter']) && (!empty($_COOKIE['filter'])) && !isset($_COOKIE['search']) ) {
 			$cookieFilter = $_COOKIE['filter'];
 			$result = mysqli_query($conn,"SELECT * FROM $tableName WHERE modStatus= '$cookieFilter' ORDER BY reg_date DESC LIMIT $start_from, $limit");
 			switch ($cookieFilter) {
@@ -168,7 +166,7 @@ if (isset($_POST['clear'])) {
 		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) && !empty($_COOKIE['filter']) || isset($_COOKIE['search']) && !empty($_COOKIE['search'])) {
 			echo "<div class='row filterResults'>" . $filteredComment;
 			//echo "<a class='clearFilter' href='assets/clearcookies.php'>X</a></div>";
-      echo "<form action='' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
+      echo "<form action='assets/clearcookies.php' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
 		}
 
 	?>
