@@ -8,6 +8,7 @@ $fnt_lg: 24px;
 
 body {
 	background:rgba(211, 211, 211, 0.23);
+	position:relative;
 }
 
 img {
@@ -15,15 +16,12 @@ img {
 }
 
 .review_wrp {
-	display: block;
-    float: left;
     margin-bottom: 10px;
 		width:100%;
 }
 
 .review_inner {
 	width:50%;
-	display:block;
 	margin:auto;
 
 	.pagination {
@@ -78,7 +76,6 @@ img {
 		display:block;
 		float:left;
 		width:100%;
-		padding:30px;
 		border:1px solid #969696;
  	}
 
@@ -99,15 +96,17 @@ img {
 		width:20%;
 		display:inline-block;
 		float:left;
+		margin:15px;
 	}
 
 	.ccr_right {
 		display:inline-block;
 		float:left;
-		padding:4px 0 0 40px;
+		padding-left:40px;
 		border-left:2px dashed #000;
 		min-height:101px;
 		width:60%;
+		margin:15px;
 
 		.ccr_main_stars {
 			display:inline-block;

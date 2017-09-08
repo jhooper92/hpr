@@ -1,34 +1,32 @@
 /* line 9, sass/main.scss */
 body {
   background: rgba(211, 211, 211, 0.23);
+  position: relative;
 }
 
-/* line 13, sass/main.scss */
+/* line 14, sass/main.scss */
 img {
   max-width: 20px;
 }
 
-/* line 17, sass/main.scss */
+/* line 18, sass/main.scss */
 .review_wrp {
-  display: block;
-  float: left;
   margin-bottom: 10px;
   width: 100%;
 }
 
-/* line 24, sass/main.scss */
+/* line 23, sass/main.scss */
 .review_inner {
   width: 50%;
-  display: block;
   margin: auto;
 }
-/* line 29, sass/main.scss */
+/* line 27, sass/main.scss */
 .review_inner .pagination {
   display: block;
   float: right;
   font-family: "Roboto", sans-serif;
 }
-/* line 35, sass/main.scss */
+/* line 33, sass/main.scss */
 .review_inner .pagination a.pageBtn {
   padding: 10px;
   background: #599226;
@@ -37,13 +35,13 @@ img {
   color: #fff;
   display: inline-block;
 }
-/* line 45, sass/main.scss */
+/* line 43, sass/main.scss */
 .review_inner form.ccr_write {
   display: block;
   float: left;
   margin: 10px 0;
 }
-/* line 50, sass/main.scss */
+/* line 48, sass/main.scss */
 .review_inner form.ccr_write input.write_btn {
   padding: 12px;
   font-family: "Roboto", sans-serif;
@@ -54,13 +52,13 @@ img {
   font-size: 16px;
   color: #fff;
 }
-/* line 60, sass/main.scss */
+/* line 58, sass/main.scss */
 .review_inner form.ccr_write input.write_btn:hover {
   background: #426d1b;
   transition: ease-in .5s;
   -webkit-transition: ease-in .5s;
 }
-/* line 68, sass/main.scss */
+/* line 66, sass/main.scss */
 .review_inner p {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -68,45 +66,46 @@ img {
   font-size: 16px;
   font-weight: 900;
 }
-/* line 76, sass/main.scss */
+/* line 74, sass/main.scss */
 .review_inner .ccr_main_row, .review_inner .ccr_review_row {
   background: #fff;
   display: block;
   float: left;
   width: 100%;
-  padding: 30px;
   border: 1px solid #969696;
 }
-/* line 87, sass/main.scss */
+/* line 84, sass/main.scss */
 .review_inner .ccr_main.ccr_left {
   font-weight: 900;
   text-align: center;
 }
-/* line 92, sass/main.scss */
+/* line 89, sass/main.scss */
 .review_inner .ccr_main .ccr_main_recommend {
   font-size: 56px;
 }
-/* line 98, sass/main.scss */
+/* line 95, sass/main.scss */
 .review_inner .ccr_left {
   width: 20%;
   display: inline-block;
   float: left;
+  margin: 15px;
 }
-/* line 104, sass/main.scss */
+/* line 102, sass/main.scss */
 .review_inner .ccr_right {
   display: inline-block;
   float: left;
-  padding: 4px 0 0 40px;
+  padding-left: 40px;
   border-left: 2px dashed #000;
   min-height: 101px;
   width: 60%;
+  margin: 15px;
 }
-/* line 112, sass/main.scss */
+/* line 111, sass/main.scss */
 .review_inner .ccr_right .ccr_main_stars {
   display: inline-block;
   float: left;
 }
-/* line 117, sass/main.scss */
+/* line 116, sass/main.scss */
 .review_inner .ccr_right .ccr_main_rating {
   display: block;
   float: left;
@@ -117,40 +116,40 @@ img {
   margin-top: 7px;
   margin-left: 10px;
 }
-/* line 128, sass/main.scss */
+/* line 127, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   margin-top: 8px;
   font-size: 20px;
 }
-/* line 133, sass/main.scss */
+/* line 132, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   display: inline-block;
   float: left;
   clear: left;
 }
-/* line 139, sass/main.scss */
+/* line 138, sass/main.scss */
 .review_inner .ccr_right img {
   max-width: 50px;
 }
-/* line 144, sass/main.scss */
+/* line 143, sass/main.scss */
 .review_inner .ccr_review_row {
   margin-bottom: 15px;
 }
-/* line 147, sass/main.scss */
+/* line 146, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left {
   width: 25%;
 }
-/* line 150, sass/main.scss */
+/* line 149, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left.ccr_review p {
   text-align: center;
   margin: 5px;
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .review_inner .ccr_review_row .ccr_review_title {
   font-size: 20px;
   margin-bottom: 10px;
 }
-/* line 162, sass/main.scss */
+/* line 161, sass/main.scss */
 .review_inner .ccr_description p {
   font-weight: initial;
 }
