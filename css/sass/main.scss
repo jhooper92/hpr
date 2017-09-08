@@ -1,10 +1,12 @@
 $main_font:'Roboto', sans-serif;
 $weight_black: 900;
+$weight_regular: 100;
 $l_green:#599226;
 $d_green: #426d1b;
 $fnt_sml: 16px;
 $fnt_md: 20px;
 $fnt_lg: 24px;
+$col_red: #f33636;
 $sm_bp: "only screen and (max-width:414px)" ;
 $md_bp: "only screen and (max-width:1024px)";
 
@@ -85,7 +87,7 @@ img {
 		font-weight:$weight_black;
 	}
 
- 	.ccr_main_row, .ccr_review_row, .review_false {
+ 	.ccr_main_row, .ccr_review_row, .review_false, .ccr_dash_row {
  		background:#fff;
 		display:block;
 		float:left;
@@ -189,6 +191,10 @@ img {
 		color:#fff;
 	}
 
+	input, select, textarea {
+		padding:12px;
+	}
+
 	.ccr_write_review {
 
 		.ccr_req, p.ccr_req, span.ccr_req {
@@ -201,7 +207,6 @@ img {
 		input[type="text"], textarea {
 			width: 90%;
 			max-width: 370px;
-			padding: 6px;
 			background: lightgrey;
 			border: none;
 			font-family:$main_font;
@@ -224,5 +229,53 @@ img {
 			h1,p {
 				margin-left:10px;
 			}
+		}
+
+//Dashboard Styling
+		.button {
+			display: inline-block;
+    	margin: 10px;
+
+			&.filter {
+				margin: 10px 10px 10px 0;
+			}
+
+			&.decline input[type="submit"] {
+				background:$col_red;
+			}
+		}
+
+		.row.filterResults {
+
+			.currentfilter {
+				background: #ccc;
+		    padding: 12px;
+		    display: inline-block;
+		    margin-bottom: 10px;
+			}
+
+			.clearfilter {
+				background:$col_red;
+				font-family:$main_font;
+				padding:12px;
+				color:#fff;
+				text-decoration:none;
+			}
+
+		}
+
+		.ccr_dash_row {
+			margin-bottom:10px;
+
+			p {
+				margin-left:10px;
+				margin-top:10px;
+
+				span {
+					font-weight:$weight_regular;
+				}
+
+			}
+
 		}
  }

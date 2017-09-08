@@ -9,9 +9,18 @@ $limit = 5;
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * $limit;
 
+setcookie("filter", '');
+setcookie("search", '');
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+if (isset($_POST['clear'])) {
+  setcookie("filter", '');
+  setcookie("search", '');
+}
+
 	if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) && isset($_POST['searchFor']) && !empty($_POST['searchFor'])) {
 		$filterBy = "$_POST[filterBy]";
 		$filterByPrint = "$_POST[filterBy]";
@@ -156,9 +165,10 @@ if (!$conn) {
 		<input type="submit" class="filterby" value="Filter">
 	</form>
 	<?php
-		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) || isset($_COOKIE['search'])) {
+		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) && !empty($_COOKIE['filter']) || isset($_COOKIE['search']) && !empty($_COOKIE['search'])) {
 			echo "<div class='row filterResults'>" . $filteredComment;
-			echo "<a class='clearFilter' href='/hpr/assets/clearcookies.php'>X</a></div>";
+			//echo "<a class='clearFilter' href='assets/clearcookies.php'>X</a></div>";
+      echo "<form action='' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
 		}
 
 	?>
@@ -182,7 +192,7 @@ if (!$conn) {
     	$mod_App = "<form class='button approve' action='assets/dash_moderation.php' method='post'> <input type='hidden' name='modId' value ='" . $row['unique_id'] . "'><input type='hidden' name='modStat' value='APP'><input type='submit' value='Approve Review'></form>";
     	$mod_Rej = "<form class='button decline' action='assets/dash_moderation.php' method='post'> <input type='hidden' name='modId' value ='" . $row['unique_id'] . "'><input type='hidden' name='modStat' value='REJ'><input type='submit' value='Reject Review'></form>";
 
-    	echo "<div class='row'><p>Review ID:<span> " . $row['unique_id'] . "</span> | Product Code:<span> " . $row['CCR_id'] . "</span></p><p> Rating:<span> " . $row['rating'] . "</span></p><p>Nickname:<span> " . $row['nickname'] . "</span></p><p> Submission Date:<span>" . $row['reg_date'] . "</p><p> Current Status:<span> " . $modStatus . "</span></p>" ;
+    	echo "<div class='ccr_dash_row'><p>Review ID:<span> " . $row['unique_id'] . "</span> | Product Code:<span> " . $row['CCR_id'] . "</span></p><p> Rating:<span> " . $row['rating'] . "</span></p><p>Nickname:<span> " . $row['nickname'] . "</span></p><p> Submission Date:<span>" . $row['reg_date'] . "</p><p> Current Status:<span> " . $modStatus . "</span></p>" ;
 
     			echo "<div class='description'><p>" . $row['ReviewTitle'] . "<p>" . $row['message'] . "</p></div>";
 

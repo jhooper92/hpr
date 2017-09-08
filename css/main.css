@@ -1,40 +1,40 @@
-/* line 11, sass/main.scss */
+/* line 13, sass/main.scss */
 body {
   background: rgba(211, 211, 211, 0.23);
   position: relative;
 }
 
-/* line 16, sass/main.scss */
+/* line 18, sass/main.scss */
 img {
   max-width: 20px;
 }
 
-/* line 20, sass/main.scss */
+/* line 22, sass/main.scss */
 .review_wrp {
   margin-bottom: 10px;
   width: 100%;
   float: left;
 }
 
-/* line 26, sass/main.scss */
+/* line 28, sass/main.scss */
 .review_inner {
   width: 100%;
   margin: auto;
   max-width: 1240px;
 }
-/* line 31, sass/main.scss */
+/* line 33, sass/main.scss */
 .review_inner a.btn {
   display: inline-block;
   margin: 10px;
   text-decoration: none;
 }
-/* line 41, sass/main.scss */
+/* line 43, sass/main.scss */
 .review_inner .pagination {
   display: block;
   float: right;
   font-family: "Roboto", sans-serif;
 }
-/* line 47, sass/main.scss */
+/* line 49, sass/main.scss */
 .review_inner .pagination a.pageBtn {
   padding: 10px;
   background: #599226;
@@ -43,7 +43,7 @@ img {
   color: #fff;
   display: inline-block;
 }
-/* line 57, sass/main.scss */
+/* line 59, sass/main.scss */
 .review_inner input[type="submit"], .review_inner a.btn {
   padding: 12px;
   font-family: "Roboto", sans-serif;
@@ -54,19 +54,19 @@ img {
   font-size: 16px;
   color: #fff;
 }
-/* line 67, sass/main.scss */
+/* line 69, sass/main.scss */
 .review_inner input[type="submit"]:hover, .review_inner a.btn:hover {
   background: #426d1b;
   transition: ease-in .5s;
   -webkit-transition: ease-in .5s;
 }
-/* line 74, sass/main.scss */
+/* line 76, sass/main.scss */
 .review_inner form.ccr_write {
   display: block;
   float: left;
   margin: 10px 0;
 }
-/* line 80, sass/main.scss */
+/* line 82, sass/main.scss */
 .review_inner p {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -74,31 +74,31 @@ img {
   font-size: 16px;
   font-weight: 900;
 }
-/* line 88, sass/main.scss */
-.review_inner .ccr_main_row, .review_inner .ccr_review_row, .review_inner .review_false {
+/* line 90, sass/main.scss */
+.review_inner .ccr_main_row, .review_inner .ccr_review_row, .review_inner .review_false, .review_inner .ccr_dash_row {
   background: #fff;
   display: block;
   float: left;
   width: 100%;
   border: 1px solid #969696;
 }
-/* line 98, sass/main.scss */
+/* line 100, sass/main.scss */
 .review_inner .ccr_main.ccr_left {
   font-weight: 900;
   text-align: center;
 }
-/* line 103, sass/main.scss */
+/* line 105, sass/main.scss */
 .review_inner .ccr_main .ccr_main_recommend {
   font-size: 56px;
 }
-/* line 109, sass/main.scss */
+/* line 111, sass/main.scss */
 .review_inner .ccr_left {
   width: 20%;
   display: inline-block;
   float: left;
   margin: 15px;
 }
-/* line 116, sass/main.scss */
+/* line 118, sass/main.scss */
 .review_inner .ccr_right {
   display: inline-block;
   float: left;
@@ -108,12 +108,12 @@ img {
   width: 60%;
   margin: 15px;
 }
-/* line 125, sass/main.scss */
+/* line 127, sass/main.scss */
 .review_inner .ccr_right .ccr_main_stars {
   display: inline-block;
   float: left;
 }
-/* line 130, sass/main.scss */
+/* line 132, sass/main.scss */
 .review_inner .ccr_right .ccr_main_rating {
   display: block;
   float: left;
@@ -124,44 +124,44 @@ img {
   margin-top: 7px;
   margin-left: 10px;
 }
-/* line 141, sass/main.scss */
+/* line 143, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   margin-top: 8px;
   font-size: 20px;
 }
-/* line 146, sass/main.scss */
+/* line 148, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   display: inline-block;
   float: left;
   clear: left;
 }
-/* line 152, sass/main.scss */
+/* line 154, sass/main.scss */
 .review_inner .ccr_right img {
   max-width: 50px;
 }
-/* line 157, sass/main.scss */
+/* line 159, sass/main.scss */
 .review_inner .ccr_review_row {
   margin-bottom: 15px;
 }
-/* line 160, sass/main.scss */
+/* line 162, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left {
   width: 25%;
 }
-/* line 163, sass/main.scss */
+/* line 165, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left.ccr_review p {
   text-align: center;
   margin: 5px;
 }
-/* line 169, sass/main.scss */
+/* line 171, sass/main.scss */
 .review_inner .ccr_review_row .ccr_review_title {
   font-size: 20px;
   margin-bottom: 10px;
 }
-/* line 175, sass/main.scss */
+/* line 177, sass/main.scss */
 .review_inner .ccr_description p {
   font-weight: initial;
 }
-/* line 181, sass/main.scss */
+/* line 183, sass/main.scss */
 .review_inner .row.error {
   padding: 10px 0;
   margin: 10px auto;
@@ -173,34 +173,78 @@ img {
   color: #fff;
 }
 /* line 194, sass/main.scss */
+.review_inner input, .review_inner select, .review_inner textarea {
+  padding: 12px;
+}
+/* line 200, sass/main.scss */
 .review_inner .ccr_write_review .ccr_req, .review_inner .ccr_write_review p.ccr_req, .review_inner .ccr_write_review span.ccr_req {
   color: red;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   margin: 10px 0 10px 10px;
 }
-/* line 201, sass/main.scss */
+/* line 207, sass/main.scss */
 .review_inner .ccr_write_review input[type="text"], .review_inner .ccr_write_review textarea {
   width: 90%;
   max-width: 370px;
-  padding: 6px;
   background: lightgrey;
   border: none;
   font-family: "Roboto", sans-serif;
 }
-/* line 210, sass/main.scss */
+/* line 215, sass/main.scss */
 .review_inner .ccr_write_review .form-row {
   margin: 10px;
 }
-/* line 214, sass/main.scss */
+/* line 219, sass/main.scss */
 .review_inner .ccr_write_review .form-row.detail span.ccr_req {
   position: absolute;
 }
-/* line 218, sass/main.scss */
+/* line 223, sass/main.scss */
 .review_inner .ccr_write_review input[type="submit"] {
   margin: 10px;
 }
-/* line 224, sass/main.scss */
+/* line 229, sass/main.scss */
 .review_inner .review_false h1, .review_inner .review_false p {
   margin-left: 10px;
+}
+/* line 235, sass/main.scss */
+.review_inner .button {
+  display: inline-block;
+  margin: 10px;
+}
+/* line 239, sass/main.scss */
+.review_inner .button.filter {
+  margin: 10px 10px 10px 0;
+}
+/* line 243, sass/main.scss */
+.review_inner .button.decline input[type="submit"] {
+  background: #f33636;
+}
+/* line 250, sass/main.scss */
+.review_inner .row.filterResults .currentfilter {
+  background: #ccc;
+  padding: 12px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 257, sass/main.scss */
+.review_inner .row.filterResults .clearfilter {
+  background: #f33636;
+  font-family: "Roboto", sans-serif;
+  padding: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 267, sass/main.scss */
+.review_inner .ccr_dash_row {
+  margin-bottom: 10px;
+}
+/* line 270, sass/main.scss */
+.review_inner .ccr_dash_row p {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/* line 274, sass/main.scss */
+.review_inner .ccr_dash_row p span {
+  font-weight: 100;
 }

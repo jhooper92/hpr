@@ -1,9 +1,7 @@
 <?php
+  setcookie("filter","");
+  setcookie("search","");
 
-setcookie("search", '');
-setcookie("filter", '');
-
-header( 'Location:../backend' ) ;
-
+header( 'Location: ../backend' ) ;
 
 ?>
