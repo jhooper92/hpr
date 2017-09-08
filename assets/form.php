@@ -1,12 +1,9 @@
-<?php 
+<?php
 
-	$ccr_id = "$_POST[ccr_id]"; 
-	$url = "$_POST[ccr_url]"; 
+	$ccr_id = "$_POST[ccr_id]";
+	$url = "$_POST[ccr_url]";
 
 ?>
-
-<div class="mainwrap">
-	<div class="innerwrap">
 		<h2>Leave a Review</h2>
 			<form action="form_valid" method="post">
 				<p class="ccr_req">Required fields are marked with *</p>
@@ -45,6 +42,3 @@
 			    <input type="hidden" name="ccr_url" value="<?php echo $url?>">
 			    <input type="submit" value="submit">
 			</form>
-	</div>
-</div>
-

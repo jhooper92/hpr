@@ -5,6 +5,8 @@ $d_green: #426d1b;
 $fnt_sml: 16px;
 $fnt_md: 20px;
 $fnt_lg: 24px;
+$sm_bp: "only screen and (max-width:414px)" ;
+$md_bp: "only screen and (max-width:1024px)";
 
 body {
 	background:rgba(211, 211, 211, 0.23);
@@ -18,11 +20,17 @@ img {
 .review_wrp {
     margin-bottom: 10px;
 		width:100%;
+		float:left;
 }
 
 .review_inner {
-	width:50%;
+	width:100%;
 	margin:auto;
+	max-width:1240px;
+
+	// @media #{$md_bp} {
+	// 	width:100%;
+	// }
 
 	.pagination {
 		display:block;
@@ -161,5 +169,9 @@ img {
 	.ccr_description p {
 		font-weight:initial;
 	}
+
+	//Styling for the form
+
+	
 
  }

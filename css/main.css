@@ -1,32 +1,34 @@
-/* line 9, sass/main.scss */
+/* line 11, sass/main.scss */
 body {
   background: rgba(211, 211, 211, 0.23);
   position: relative;
 }
 
-/* line 14, sass/main.scss */
+/* line 16, sass/main.scss */
 img {
   max-width: 20px;
 }
 
-/* line 18, sass/main.scss */
+/* line 20, sass/main.scss */
 .review_wrp {
   margin-bottom: 10px;
   width: 100%;
+  float: left;
 }
 
-/* line 23, sass/main.scss */
+/* line 26, sass/main.scss */
 .review_inner {
-  width: 50%;
+  width: 100%;
   margin: auto;
+  max-width: 1240px;
 }
-/* line 27, sass/main.scss */
+/* line 35, sass/main.scss */
 .review_inner .pagination {
   display: block;
   float: right;
   font-family: "Roboto", sans-serif;
 }
-/* line 33, sass/main.scss */
+/* line 41, sass/main.scss */
 .review_inner .pagination a.pageBtn {
   padding: 10px;
   background: #599226;
@@ -35,13 +37,13 @@ img {
   color: #fff;
   display: inline-block;
 }
-/* line 43, sass/main.scss */
+/* line 51, sass/main.scss */
 .review_inner form.ccr_write {
   display: block;
   float: left;
   margin: 10px 0;
 }
-/* line 48, sass/main.scss */
+/* line 56, sass/main.scss */
 .review_inner form.ccr_write input.write_btn {
   padding: 12px;
   font-family: "Roboto", sans-serif;
@@ -52,13 +54,13 @@ img {
   font-size: 16px;
   color: #fff;
 }
-/* line 58, sass/main.scss */
+/* line 66, sass/main.scss */
 .review_inner form.ccr_write input.write_btn:hover {
   background: #426d1b;
   transition: ease-in .5s;
   -webkit-transition: ease-in .5s;
 }
-/* line 66, sass/main.scss */
+/* line 74, sass/main.scss */
 .review_inner p {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -66,7 +68,7 @@ img {
   font-size: 16px;
   font-weight: 900;
 }
-/* line 74, sass/main.scss */
+/* line 82, sass/main.scss */
 .review_inner .ccr_main_row, .review_inner .ccr_review_row {
   background: #fff;
   display: block;
@@ -74,23 +76,23 @@ img {
   width: 100%;
   border: 1px solid #969696;
 }
-/* line 84, sass/main.scss */
+/* line 92, sass/main.scss */
 .review_inner .ccr_main.ccr_left {
   font-weight: 900;
   text-align: center;
 }
-/* line 89, sass/main.scss */
+/* line 97, sass/main.scss */
 .review_inner .ccr_main .ccr_main_recommend {
   font-size: 56px;
 }
-/* line 95, sass/main.scss */
+/* line 103, sass/main.scss */
 .review_inner .ccr_left {
   width: 20%;
   display: inline-block;
   float: left;
   margin: 15px;
 }
-/* line 102, sass/main.scss */
+/* line 110, sass/main.scss */
 .review_inner .ccr_right {
   display: inline-block;
   float: left;
@@ -100,12 +102,12 @@ img {
   width: 60%;
   margin: 15px;
 }
-/* line 111, sass/main.scss */
+/* line 119, sass/main.scss */
 .review_inner .ccr_right .ccr_main_stars {
   display: inline-block;
   float: left;
 }
-/* line 116, sass/main.scss */
+/* line 124, sass/main.scss */
 .review_inner .ccr_right .ccr_main_rating {
   display: block;
   float: left;
@@ -116,40 +118,40 @@ img {
   margin-top: 7px;
   margin-left: 10px;
 }
-/* line 127, sass/main.scss */
+/* line 135, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   margin-top: 8px;
   font-size: 20px;
 }
-/* line 132, sass/main.scss */
+/* line 140, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   display: inline-block;
   float: left;
   clear: left;
 }
-/* line 138, sass/main.scss */
+/* line 146, sass/main.scss */
 .review_inner .ccr_right img {
   max-width: 50px;
 }
-/* line 143, sass/main.scss */
+/* line 151, sass/main.scss */
 .review_inner .ccr_review_row {
   margin-bottom: 15px;
 }
-/* line 146, sass/main.scss */
+/* line 154, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left {
   width: 25%;
 }
-/* line 149, sass/main.scss */
+/* line 157, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left.ccr_review p {
   text-align: center;
   margin: 5px;
 }
-/* line 155, sass/main.scss */
+/* line 163, sass/main.scss */
 .review_inner .ccr_review_row .ccr_review_title {
   font-size: 20px;
   margin-bottom: 10px;
 }
-/* line 161, sass/main.scss */
+/* line 169, sass/main.scss */
 .review_inner .ccr_description p {
   font-weight: initial;
 }
