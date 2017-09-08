@@ -166,7 +166,7 @@ if (isset($_POST['clear'])) {
 		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) && !empty($_COOKIE['filter']) || isset($_COOKIE['search']) && !empty($_COOKIE['search'])) {
 			echo "<div class='row filterResults'>" . $filteredComment;
 			//echo "<a class='clearFilter' href='assets/clearcookies.php'>X</a></div>";
-      echo "<form action='assets/clearcookies.php' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
+      echo "<form class='ccr_clear' action='assets/clearcookies.php' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
 		}
 
 	?>

@@ -216,6 +216,12 @@ img {
 				margin:10px;
 			}
 
+			form.ccr_clear {
+				display:inline-block;
+				background:$col_red;
+				color:#fff;
+			}
+
 			.form-row.detail span.ccr_req {
 				position:absolute;
 			}
