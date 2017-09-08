@@ -38,13 +38,7 @@ img {
   display: inline-block;
 }
 /* line 51, sass/main.scss */
-.review_inner form.ccr_write {
-  display: block;
-  float: left;
-  margin: 10px 0;
-}
-/* line 56, sass/main.scss */
-.review_inner form.ccr_write input.write_btn {
+.review_inner input[type="submit"] {
   padding: 12px;
   font-family: "Roboto", sans-serif;
   background: #599226;
@@ -54,11 +48,17 @@ img {
   font-size: 16px;
   color: #fff;
 }
-/* line 66, sass/main.scss */
-.review_inner form.ccr_write input.write_btn:hover {
+/* line 61, sass/main.scss */
+.review_inner input[type="submit"]:hover {
   background: #426d1b;
   transition: ease-in .5s;
   -webkit-transition: ease-in .5s;
+}
+/* line 68, sass/main.scss */
+.review_inner form.ccr_write {
+  display: block;
+  float: left;
+  margin: 10px 0;
 }
 /* line 74, sass/main.scss */
 .review_inner p {
@@ -69,7 +69,7 @@ img {
   font-weight: 900;
 }
 /* line 82, sass/main.scss */
-.review_inner .ccr_main_row, .review_inner .ccr_review_row {
+.review_inner .ccr_main_row, .review_inner .ccr_review_row, .review_inner form.ccr_write_review {
   background: #fff;
   display: block;
   float: left;
@@ -154,4 +154,32 @@ img {
 /* line 169, sass/main.scss */
 .review_inner .ccr_description p {
   font-weight: initial;
+}
+/* line 176, sass/main.scss */
+.review_inner .ccr_write_review .ccr_req, .review_inner .ccr_write_review p.ccr_req, .review_inner .ccr_write_review span.ccr_req {
+  color: red;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  margin: 10px 0 10px 10px;
+}
+/* line 183, sass/main.scss */
+.review_inner .ccr_write_review input[type="text"], .review_inner .ccr_write_review textarea {
+  width: 90%;
+  max-width: 370px;
+  padding: 6px;
+  background: lightgrey;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+/* line 192, sass/main.scss */
+.review_inner .ccr_write_review .form-row {
+  margin: 10px;
+}
+/* line 196, sass/main.scss */
+.review_inner .ccr_write_review .form-row.detail span.ccr_req {
+  position: absolute;
+}
+/* line 200, sass/main.scss */
+.review_inner .ccr_write_review input[type="submit"] {
+  margin: 10px;
 }

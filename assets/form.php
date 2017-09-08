@@ -4,27 +4,26 @@
 	$url = "$_POST[ccr_url]";
 
 ?>
-		<h2>Leave a Review</h2>
-			<form action="form_valid" method="post">
+			<form action="form_valid" class="ccr_write_review" method="post">
 				<p class="ccr_req">Required fields are marked with *</p>
 				<div class="form-row nickname">
-					<input type="text" name="ccr_nickname" placeholder="Enter a Nickname" value="<?php if (!isset($_POST['ccr_nickname'])) {echo "";} else {echo $nickname;} ?>"><span class="ccr_">*</span>
+					<input type="text" name="ccr_nickname" placeholder="Enter a Nickname" value="<?php if (!isset($_POST['ccr_nickname'])) {echo "";} else {echo $nickname;} ?>"><span class="ccr_req">*</span>
 				</div>
 
 				<div class="form-row email">
-					<input type="text" name="ccr_email" type="email" placeholder="Enter Your Email Address" value="<?php if (!isset($_POST['ccr_email'])) {echo "";} else {echo $email;} ?>"><span class="ccr_">*</span>
+					<input type="text" name="ccr_email" type="email" placeholder="Enter Your Email Address" value="<?php if (!isset($_POST['ccr_email'])) {echo "";} else {echo $email;} ?>"><span class="ccr_req">*</span>
 				</div>
 
 				<div class="form-row title">
-				    <input type="text" name="ccr_ReviewTitle" placeholder="Enter a Review Title" value="<?php if (!isset($_POST['ccr_ReviewTitle'])) {echo "";} else {echo $ReviewTitle;} ?>"><span class="ccr_">*</span>
+				    <input type="text" name="ccr_ReviewTitle" placeholder="Enter a Review Title" value="<?php if (!isset($_POST['ccr_ReviewTitle'])) {echo "";} else {echo $ReviewTitle;} ?>"><span class="ccr_req">*</span>
 			    </div>
 
 			    <div class="form-row detail">
-				    <textarea name="ccr_message" rows="10" cols="30" placeholder="leave more detail about your experience" value="<?php if (!isset($_POST['ccr_message'])) {echo "";} else {echo $message;} ?>"></textarea><span class="ccr_">*</span>
+				    <textarea name="ccr_message" rows="10" cols="30" placeholder="Enter More Detail About Your Review" value="<?php if (!isset($_POST['ccr_message'])) {echo "";} else {echo $message;} ?>"></textarea><span class="ccr_req">*</span>
 		    	</div>
 
 				<div class="form-row rating">
-					<p>How Do You Rate This Product? <span class="ccr_"> *</span></p>
+					<p>How Do You Rate This Product? <span class="ccr_req"> *</span></p>
 					<input type="radio" name="ccr_rating" id="rating_one" value="1" ><label for="rating_one">1</label>
 					<input type="radio" name="ccr_rating" id="rating_two" value="2" ><label for="rating_one">2</label>
 					<input type="radio" name="ccr_rating" id="rating_three" value="3" ><label for="rating_one">3</label>
@@ -33,7 +32,7 @@
 				</div>
 
 			    <div class="form-row recommend">
-				    <p>Would You Recommend this Product? <span class="ccr_"> *</span></p>
+				    <p>Would You Recommend this Product? <span class="ccr_req"> *</span></p>
 				    <input type="radio" name="ccr_recommend" value="Yes" id="recommend_yes" ><label for="recommend_yes">Yes</label>
 				    <input type="radio" name="ccr_recommend" value="No" id="recommend_no" ><label for="recommend_no">No</label>
 				</div>
