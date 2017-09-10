@@ -9,16 +9,8 @@ $limit = 5;
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * $limit;
 
-setcookie("filter", '');
-setcookie("search", '');
-
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}
-
-if (isset($_POST['clear'])) {
-  setcookie("filter", '');
-  setcookie("search", '');
 }
 
 	if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) && isset($_POST['searchFor']) && !empty($_POST['searchFor'])) {
@@ -166,7 +158,7 @@ if (isset($_POST['clear'])) {
 		if (isset($_POST['filterBy']) && !empty($_POST['filterBy']) || isset($_POST['searchFor']) && !empty($_POST['searchFor']) || isset($_COOKIE['filter']) && !empty($_COOKIE['filter']) || isset($_COOKIE['search']) && !empty($_COOKIE['search'])) {
 			echo "<div class='row filterResults'>" . $filteredComment;
 			//echo "<a class='clearFilter' href='assets/clearcookies.php'>X</a></div>";
-      echo "<form class='ccr_clear' action='assets/clearcookies.php' method='post'><input type='hidden' name='clear' value='clear'><input type='submit' value='clear'></form>";
+      echo "<form class='ccr_clear' action='assets/clearcookies.php' method='post'><input type='submit' value='clear'></form>";
 		}
 
 	?>
@@ -192,7 +184,7 @@ if (isset($_POST['clear'])) {
 
     	echo "<div class='ccr_dash_row'><p>Review ID:<span> " . $row['unique_id'] . "</span> | Product Code:<span> " . $row['CCR_id'] . "</span></p><p> Rating:<span> " . $row['rating'] . "</span></p><p>Nickname:<span> " . $row['nickname'] . "</span></p><p> Submission Date:<span>" . $row['reg_date'] . "</p><p> Current Status:<span> " . $modStatus . "</span></p>" ;
 
-    			echo "<div class='description'><p>" . $row['ReviewTitle'] . "<p>" . $row['message'] . "</p></div>";
+    			echo "<div class='ccr_description'><p>Review Title: <span>" . $row['ReviewTitle'] . "</span><p>Review Message: <span>" . $row['message'] . "</span></p></div>";
 
     	if ($row['modStatus'] === "PEND")
     		{

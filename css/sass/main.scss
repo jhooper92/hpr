@@ -7,6 +7,7 @@ $fnt_sml: 16px;
 $fnt_md: 20px;
 $fnt_lg: 24px;
 $col_red: #f33636;
+$col_grey: #ccc;
 $sm_bp: "only screen and (max-width:414px)" ;
 $md_bp: "only screen and (max-width:1024px)";
 
@@ -66,6 +67,10 @@ img {
 		font-size: $fnt_sml;
 		color:#fff;
 
+			@media #{$sm_bp} {
+				font-size:100%;
+			}
+
 		&:hover {
 			background:$d_green;
 			transition:ease-in .5s;
@@ -112,7 +117,17 @@ img {
 		width:20%;
 		display:inline-block;
 		float:left;
-		margin:15px;
+		margin:2%;
+
+		@media #{$sm_bp} {
+			width:90%;
+			padding:0;
+			margin:5% auto;
+			text-align:center;
+			float:none;
+			display:block;
+		}
+
 	}
 
 	.ccr_right {
@@ -122,33 +137,65 @@ img {
 		border-left:2px dashed #000;
 		min-height:101px;
 		width:60%;
-		margin:15px;
+		margin:2%;
+
+		@media #{$sm_bp} {
+			width:90%;
+			padding-left:0;
+			border-left:none;
+			min-height:auto;
+			margin:5% auto;
+			display:block;
+			float:none;
+		}
 
 		.ccr_main_stars {
 			display:inline-block;
 			float:left;
+
+			@media #{$sm_bp} {
+				text-align:center;
+				float:none;
+				display:block;
+
+				img {
+					max-width:30px;
+				}
+			}
 		}
 
 		.ccr_main_rating {
 			display:block;
-			float:left;
+			float:right;
 			font-family:$main_font;
 			font-weight:$weight_black;
 			font-size:30px;
 			color:#000;
 			margin-top:7px;
 			margin-left:10px;
+
+			@media #{$sm_bp} {
+				margin-top:0;
+				font-size:20px;
+				display:inline-block;
+				float:none;
+			}
 		}
 
 		.ccr_overallRating {
 			margin-top:8px;
 			font-size:20px;
-		}
-
-		.ccr_overallRating {
 			display:inline-block;
 			float:left;
 			clear:left;
+
+			@media #{$sm_bp} {
+				width:90%;
+				margin:5% auto;
+				text-align:center;
+				display:block;
+				float:none;
+			}
 		}
 
 		img {
@@ -162,6 +209,10 @@ img {
 		.ccr_left {
 			width:25%;
 
+			@media #{$sm_bp}{
+				width:100%;
+			}
+
 			&.ccr_review p {
 				text-align: center;
     		margin: 5px;
@@ -172,11 +223,14 @@ img {
 			font-size:$fnt_md;
 			margin-bottom:10px;
 		}
+
+		.ccr_description p {
+			font-weight:initial;
+		}
+
 	}
 
-	.ccr_description p {
-		font-weight:initial;
-	}
+
 
 	//Styling for the form
 
@@ -193,6 +247,15 @@ img {
 
 	input, select, textarea {
 		padding:12px;
+	}
+
+	form.ccr_clear {
+		display:inline-block;
+
+		input[type="submit"] {
+			background:$col_red;
+			color:#fff;
+		}
 	}
 
 	.ccr_write_review {
@@ -214,12 +277,6 @@ img {
 
 			.form-row {
 				margin:10px;
-			}
-
-			form.ccr_clear {
-				display:inline-block;
-				background:$col_red;
-				color:#fff;
 			}
 
 			.form-row.detail span.ccr_req {
@@ -254,7 +311,7 @@ img {
 		.row.filterResults {
 
 			.currentfilter {
-				background: #ccc;
+				background: $col_grey;
 		    padding: 12px;
 		    display: inline-block;
 		    margin-bottom: 10px;
@@ -282,6 +339,16 @@ img {
 				}
 
 			}
+
+			// .ccr_description {
+			//
+			// 	background:$col_grey;
+			// 	margin:0 10px;
+			//
+			// 	p {
+			// 		font-weight:$weight_regular;
+			// 	}
+			// }
 
 		}
  }

@@ -32,7 +32,7 @@ if (!$conn) {
 
 
 	if (! $sum) {
-		echo "no reviews yet";
+		echo "<div><p>no reviews yet</p></div>";
 	}
 
 	else {
@@ -42,8 +42,8 @@ if (!$conn) {
 		echo "<div class='ccr_right ccr_main'><div class='ccr_main_stars' alt='" . $Rating . " out of 5 Stars' title ='" . $Rating . " out of 5 Stars'>";
 		echo str_repeat("<img src='stars/five-stars.png'>", $rating_star);
 		echo "<img src='stars/stars_" . $rating_point . "'>";
-		echo str_repeat("<img src='stars/stars_0.png'>", $rating_grey);
-		echo "</div><div class='ccr_main_rating' itemprop='reviewCount'>(" . round($ryr + $rnr) .")</div> <p class='ccr_overallRating' > Overall Rating of <span itemprop='ratingValue'>" . $Rating ."</span> out of 5</p></div></div>";
+		if ($rating_grey == "-1") {} else {echo str_repeat("<img src='stars/stars_0.png'>", $rating_grey);}
+		echo "<div class='ccr_main_rating' itemprop='reviewCount'>(" . round($ryr + $rnr) .")</div></div> <p class='ccr_overallRating' > Overall Rating of <span itemprop='ratingValue'>" . $Rating ."</span> out of 5</p></div></div>";
 
 	} ?>
 
