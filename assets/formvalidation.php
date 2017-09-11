@@ -101,18 +101,25 @@ $conn = mysqli_connect($serverName,$userName,$userPass,$dbName);
 			VALUES ( '$ccr_id', '$nickname' , '$email' , '$rating', '$ReviewTitle', '$message', '$date_stamp' , 'PEND', '$recommend')";
 
 			if (mysqli_query($conn, $sql)) {
-			    echo "<div class='mainwrap'><div class='innerwrap'>
-			<h1> Thanks </h1>
-			<p> Your review has been submitted </p>
-				<a href='" . $prevURL . "' class='ccr_finish'>Finish</a></div></div>";
+			    echo "<div class='mainwrap'>
+									<div class='innerwrap'>
+										<div class='review_return'>
+											<p> Thank you </p>
+											<p> Your review has been submitted </p>
+										</div>
+										<a href='" . $prevURL . "' class='ccr_finish btn'>Finish</a>
+									</div>
+								</div>";
 			}
 
 			else {
 			    echo "
 			    <div class='mainwrap'>
 			    	<div class='innerwrap'>
-						<h1> There seems to have been an issue</h1>
-						<p> Please contact the company</p>
+							<div class='review_return'>
+								<p>There seems to have been an issue and your review could not be submitted</p>
+								<p> Please contact the company</p>
+							</div>
 					</div>
 				</div>";
 			}

@@ -54,6 +54,10 @@ img {
 			text-decoration:none;
 			color:#fff;
 			display:inline-block;
+
+			@media #{$sm_bp}{
+				padding:15px;
+			}
 		}
 	}
 
@@ -82,7 +86,16 @@ img {
 		display: block;
 		float: left;
 		margin: 10px 0;
+		width:100%;
+
+		@media #{$sm_bp} {
+				input.write_btn {
+					width:94%;
+					display:block;
+				}
+		}
 	}
+
 
 	p {
 		margin:0;
@@ -260,6 +273,14 @@ img {
 
 	.ccr_write_review {
 
+		width:434px;
+		margin:auto;
+		display:block;
+
+		@media #{$sm_bp} {
+			width:auto;
+		}
+
 		.ccr_req, p.ccr_req, span.ccr_req {
 			color:red;
 			font-family:$main_font;
@@ -285,6 +306,10 @@ img {
 
 			input[type="submit"] {
 				margin:10px;
+
+				@media #{$sm_bp} {
+					width:88%;
+				}
 			}
 		}
 
@@ -339,16 +364,22 @@ img {
 				}
 
 			}
-
-			// .ccr_description {
-			//
-			// 	background:$col_grey;
-			// 	margin:0 10px;
-			//
-			// 	p {
-			// 		font-weight:$weight_regular;
-			// 	}
-			// }
-
 		}
+
+		//review return messages
+
+			.review_return {
+				display: block;
+				padding: 10px;
+				background: #fff;
+				border: 1px solid grey;
+			}
+
+			a.btn.ccr_finish {
+				@media #{$sm_bp} {
+					width:93%;
+					margin:10px auto;
+					text-align:center;
+				}
+			}
  }
