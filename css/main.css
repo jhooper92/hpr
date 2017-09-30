@@ -116,7 +116,6 @@ img {
 .review_inner .ccr_left {
   width: 20%;
   display: table-cell;
-  padding: 2%;
   border-right: dashed 2px black;
   vertical-align: middle;
 }
@@ -125,7 +124,7 @@ img {
   .review_inner .ccr_left {
     width: 90%;
     padding: 0;
-    margin: 5% auto;
+    margin: 0 auto;
     text-align: center;
     border-right: none;
     float: none;
@@ -152,37 +151,40 @@ img {
     float: none;
     text-align: center;
   }
+  /* line 166, sass/main.scss */
+  .review_inner .ccr_right.ccr_review {
+    margin-top: 30px;
+  }
 }
-/* line 167, sass/main.scss */
+/* line 171, sass/main.scss */
 .review_inner .ccr_right .ccr_main_stars {
   display: inline-block;
   float: left;
 }
 @media only screen and (max-width: 414px) {
-  /* line 167, sass/main.scss */
+  /* line 171, sass/main.scss */
   .review_inner .ccr_right .ccr_main_stars {
     text-align: center;
     float: none;
     display: block;
   }
-  /* line 176, sass/main.scss */
+  /* line 180, sass/main.scss */
   .review_inner .ccr_right .ccr_main_stars img {
     max-width: 30px;
   }
 }
-/* line 182, sass/main.scss */
+/* line 186, sass/main.scss */
 .review_inner .ccr_right .ccr_main_rating {
   display: block;
   float: right;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 26px;
   color: #000;
-  margin-top: 7px;
   margin-left: 10px;
 }
 @media only screen and (max-width: 414px) {
-  /* line 182, sass/main.scss */
+  /* line 186, sass/main.scss */
   .review_inner .ccr_right .ccr_main_rating {
     margin-top: 0;
     font-size: 20px;
@@ -190,7 +192,7 @@ img {
     float: none;
   }
 }
-/* line 200, sass/main.scss */
+/* line 203, sass/main.scss */
 .review_inner .ccr_right .ccr_overallRating {
   margin-top: 8px;
   font-size: 20px;
@@ -199,7 +201,7 @@ img {
   clear: left;
 }
 @media only screen and (max-width: 414px) {
-  /* line 200, sass/main.scss */
+  /* line 203, sass/main.scss */
   .review_inner .ccr_right .ccr_overallRating {
     width: 90%;
     margin: 5% auto;
@@ -208,39 +210,39 @@ img {
     float: none;
   }
 }
-/* line 216, sass/main.scss */
+/* line 219, sass/main.scss */
 .review_inner .ccr_right img {
-  max-width: 50px;
+  max-width: 35px;
 }
-/* line 221, sass/main.scss */
+/* line 224, sass/main.scss */
 .review_inner .ccr_review_row {
   margin-bottom: 15px;
 }
-/* line 224, sass/main.scss */
+/* line 227, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left {
   width: 25%;
 }
 @media only screen and (max-width: 414px) {
-  /* line 224, sass/main.scss */
+  /* line 227, sass/main.scss */
   .review_inner .ccr_review_row .ccr_left {
     width: 100%;
   }
 }
-/* line 231, sass/main.scss */
+/* line 234, sass/main.scss */
 .review_inner .ccr_review_row .ccr_left.ccr_review p {
   text-align: center;
   margin: 5px;
 }
-/* line 237, sass/main.scss */
+/* line 240, sass/main.scss */
 .review_inner .ccr_review_row .ccr_review_title {
   font-size: 20px;
   margin-bottom: 10px;
 }
-/* line 242, sass/main.scss */
+/* line 245, sass/main.scss */
 .review_inner .ccr_review_row .ccr_description p {
   font-weight: initial;
 }
-/* line 252, sass/main.scss */
+/* line 255, sass/main.scss */
 .review_inner .row.error {
   padding: 10px 0;
   margin: 10px auto;
@@ -251,39 +253,39 @@ img {
   font-family: "Roboto", sans-serif;
   color: #fff;
 }
-/* line 263, sass/main.scss */
+/* line 266, sass/main.scss */
 .review_inner input, .review_inner select, .review_inner textarea {
   padding: 12px;
 }
-/* line 267, sass/main.scss */
+/* line 270, sass/main.scss */
 .review_inner form.ccr_clear {
   display: inline-block;
 }
-/* line 270, sass/main.scss */
+/* line 273, sass/main.scss */
 .review_inner form.ccr_clear input[type="submit"] {
   background: #f33636;
   color: #fff;
 }
-/* line 276, sass/main.scss */
+/* line 279, sass/main.scss */
 .review_inner .ccr_write_review {
   width: 434px;
   margin: auto;
   display: block;
 }
 @media only screen and (max-width: 414px) {
-  /* line 276, sass/main.scss */
+  /* line 279, sass/main.scss */
   .review_inner .ccr_write_review {
     width: auto;
   }
 }
-/* line 286, sass/main.scss */
+/* line 289, sass/main.scss */
 .review_inner .ccr_write_review .ccr_req, .review_inner .ccr_write_review p.ccr_req, .review_inner .ccr_write_review span.ccr_req {
   color: red;
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   margin: 10px 0 10px 10px;
 }
-/* line 293, sass/main.scss */
+/* line 296, sass/main.scss */
 .review_inner .ccr_write_review input[type="text"], .review_inner .ccr_write_review textarea {
   width: 90%;
   max-width: 370px;
@@ -291,49 +293,49 @@ img {
   border: none;
   font-family: "Roboto", sans-serif;
 }
-/* line 301, sass/main.scss */
+/* line 304, sass/main.scss */
 .review_inner .ccr_write_review .form-row {
   margin: 10px;
 }
-/* line 305, sass/main.scss */
+/* line 308, sass/main.scss */
 .review_inner .ccr_write_review .form-row.detail span.ccr_req {
   position: absolute;
 }
-/* line 309, sass/main.scss */
+/* line 312, sass/main.scss */
 .review_inner .ccr_write_review input[type="submit"] {
   margin: 10px;
 }
 @media only screen and (max-width: 414px) {
-  /* line 309, sass/main.scss */
+  /* line 312, sass/main.scss */
   .review_inner .ccr_write_review input[type="submit"] {
     width: 88%;
   }
 }
-/* line 319, sass/main.scss */
+/* line 322, sass/main.scss */
 .review_inner .review_false h1, .review_inner .review_false p {
   margin-left: 10px;
 }
-/* line 325, sass/main.scss */
+/* line 328, sass/main.scss */
 .review_inner .button {
   display: inline-block;
   margin: 10px;
 }
-/* line 329, sass/main.scss */
+/* line 332, sass/main.scss */
 .review_inner .button.filter {
   margin: 10px 10px 10px 0;
 }
-/* line 333, sass/main.scss */
+/* line 336, sass/main.scss */
 .review_inner .button.decline input[type="submit"] {
   background: #f33636;
 }
-/* line 340, sass/main.scss */
+/* line 343, sass/main.scss */
 .review_inner .row.filterResults .currentfilter {
   background: #cccccc;
   padding: 12px;
   display: inline-block;
   margin-bottom: 10px;
 }
-/* line 347, sass/main.scss */
+/* line 350, sass/main.scss */
 .review_inner .row.filterResults .clearfilter {
   background: #f33636;
   font-family: "Roboto", sans-serif;
@@ -341,20 +343,20 @@ img {
   color: #fff;
   text-decoration: none;
 }
-/* line 357, sass/main.scss */
+/* line 360, sass/main.scss */
 .review_inner .ccr_dash_row {
   margin-bottom: 10px;
 }
-/* line 360, sass/main.scss */
+/* line 363, sass/main.scss */
 .review_inner .ccr_dash_row p {
   margin-left: 10px;
   margin-top: 10px;
 }
-/* line 364, sass/main.scss */
+/* line 367, sass/main.scss */
 .review_inner .ccr_dash_row p span {
   font-weight: 100;
 }
-/* line 373, sass/main.scss */
+/* line 376, sass/main.scss */
 .review_inner .review_return {
   display: block;
   padding: 10px;
@@ -362,7 +364,7 @@ img {
   border: 1px solid grey;
 }
 @media only screen and (max-width: 414px) {
-  /* line 380, sass/main.scss */
+  /* line 383, sass/main.scss */
   .review_inner a.btn.ccr_finish {
     width: 93%;
     margin: 10px auto;

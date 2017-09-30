@@ -130,19 +130,19 @@ img {
 	.ccr_left {
 		width:20%;
 		display:table-cell;
-		padding:2%;
 		border-right:dashed 2px black;
 		vertical-align:middle;
 
 		@media #{$sm_bp} {
 			width:90%;
 			padding:0;
-			margin:5% auto;
+			margin:0 auto;
 			text-align:center;
 			border-right:none;
 			float:none;
 			display:block;
 		}
+
 
 	}
 
@@ -162,6 +162,10 @@ img {
 			margin:0 auto;
 			float:none;
 			text-align:center;
+
+			&.ccr_review {
+				margin-top:30px;
+			}
 		}
 
 		.ccr_main_stars {
@@ -184,9 +188,8 @@ img {
 			float:right;
 			font-family:$main_font;
 			font-weight:$weight_black;
-			font-size:30px;
+			font-size:26px;
 			color:#000;
-			margin-top:7px;
 			margin-left:10px;
 
 			@media #{$sm_bp} {
@@ -214,7 +217,7 @@ img {
 		}
 
 		img {
-			max-width:50px;
+			max-width:35px;
 		}
 	}
 
